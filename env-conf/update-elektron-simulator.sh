@@ -8,7 +8,7 @@ if [ -d "elektron" ]; then
 	cd ~/rapp/robots/src/elektron;
 	git pull;
 else
-	git clone https://github.com/dudekw/elektron.git;
+	git clone https://github.com/rcprg-ros-pkg/elektron.git;
 fi
 
 cd ~/rapp/robots/src/elektron;

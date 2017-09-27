@@ -8,10 +8,10 @@
     branch = master
 [submodule "elektron-real-effectors"]
 	path = elektron_base/elektron-real-effectors
-	url = https://github.com/dudekw/elektron-real-effectors.git
+	url = https://github.com/rcprg-ros-pkg/elektron-real-effectors.git
 [submodule "elektron-simulation"]
 	path = elektron-simulation
-	url = https://github.com/dudekw/elektron-simulation.git
+	url = https://github.com/rcprg-ros-pkg/elektron-simulation.git
 [submodule "elektron-rapps"]
 	path = elektron_apps/elektron-rapps
 	url = https://github.com/dudekw/elektron-rapps.git
