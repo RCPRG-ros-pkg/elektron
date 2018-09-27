@@ -6,6 +6,8 @@
 #include <tf/transform_listener.h>
 #include <costmap_2d/costmap_2d_ros.h>
 #include <dwa_local_planner/dwa_planner_ros.h>
+#include <tf2_ros/transform_listener.h>
+
 namespace rapp_move_base {
 
  class RappMoveBase {
@@ -15,7 +17,7 @@ namespace rapp_move_base {
        * @param name The name of the action
        * @param tf A reference to a TransformListener
        */
-      RappMoveBase(tf::TransformListener& tf);
+      RappMoveBase(tf2_ros::Buffer& tfBuffer);
 
       /**
        * @brief  Destructor - Cleans up

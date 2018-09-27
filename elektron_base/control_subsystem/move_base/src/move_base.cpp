@@ -45,18 +45,19 @@
 #include <elektron_msgs/MoveAlongPathRequest.h>
 #include <elektron_msgs/MoveAlongPathResponse.h>
 #include <elektron_msgs/MoveAlongPath.h>
+#include <tf2_ros/transform_listener.h>
 
 namespace rapp_move_base {
 
-  RappMoveBase::RappMoveBase(tf::TransformListener& tf){
+  RappMoveBase::RappMoveBase(tf2_ros::Buffer& tfBuffer){
     // costmap_2d::Costmap2DROS costmap("my_costmap", tf);
     // costmap.pause();
-    costmap_ = new costmap_2d::Costmap2DROS("my_costmap", tf);
+    costmap_ = new costmap_2d::Costmap2DROS("my_costmap", tfBuffer);
     costmap_->start();
 
     // dwa_local_planner::DWAPlannerROS dp;
     dp_ = new dwa_local_planner::DWAPlannerROS;
-    dp_->initialize("my_dwa_planner", &tf, costmap_);
+    dp_->initialize("my_dwa_planner", &tfBuffer, costmap_);
 
     ROS_INFO("STARTING MY SERVICE");
     std::string node_name = ros::this_node::getName();
