@@ -1,0 +1,5 @@
+<launch>
+<node pkg="fake_localization" type="fake_localization" name="fake_localization" output="screen">
+	<remap from="base_pose_ground_truth" to="gazebo_odom"/>
+</node>
+</launch>
